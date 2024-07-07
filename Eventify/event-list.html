@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | Eventify</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/solar/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom styles */
+    body {
+      background-image: url('img-bg.jpg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding-bottom: 60px; /* Padding for footer */
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000; /* Ensure navbar stays above content */
+    }
+    .event-card {
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      overflow: hidden; /* Ensure images do not overflow */
+    }
+    .event-card:hover {
+      transform: translateY(-5px); /* Lift card on hover */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .event-card .card-img-top {
+      height: 200px; /* Adjust height of image */
+      object-fit: cover; /* Ensure image covers the entire container */
+    }
+    .event-card .card-body {
+      padding: 20px;
+    }
+    .event-card .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .event-card .card-text {
+      color: #6c757d; /* Text color for details */
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #343a40; /* Dark background color */
+      color: #f8f9fa; /* Light text color */
+      padding: 10px 0; /* Padding for content */
+      text-align: center; /* Center align text */
+    }
+    .create-event-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 3; /* Ensure button is above other content */
+    }
+    @media (max-width: 768px) {
+      .create-event-btn {
+        bottom: 70px;
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Eventify</a>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="create-event.html">Create New Event</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <!-- Event Card 1 -->
+    <div class="col">
+      <div class="event-card">
+        <img src="img/img-1.jpg" class="card-img-top" alt="Event Image 1">
+        <div class="card-body">
+          <h5 class="card-title">Event Name 1</h5>
+          <p class="card-text">Date: January 1, 2025<br>Time: 10:00 AM<br>Location: Central Park<br>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center p-2">
+          <div class="btn-group" role="group" aria-label="Event Actions">
+            <button href="create-event.html" type="button" class="btn btn-outline-primary edit-event" data-id="1">Edit</button>
+            <button href="create-event.html" type="button" class="btn btn-outline-danger delete-event" data-id="1">Delete</button>
+          </div>
+          <a href="event-details.html" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event Card 2 -->
+    <div class="col">
+      <div class="event-card">
+        <img src="img/img-2.jpg" class="card-img-top" alt="Event Image 2">
+        <div class="card-body">
+          <h5 class="card-title">Event Name 2</h5>
+          <p class="card-text">Date: February 15, 2025<br>Time: 2:00 PM<br>Location: Lincoln Center<br>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center p-2">
+          <div class="btn-group" role="group" aria-label="Event Actions">
+            <button href="create-event.html" type="button" class="btn btn-outline-primary edit-event" data-id="2">Edit</button>
+            <button href="create-event.html" type="button" class="btn btn-outline-danger delete-event" data-id="2">Delete</button>
+          </div>
+          <a href="event-details.html" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event Card 3 -->
+    <div class="col">
+      <div class="event-card">
+        <img src="img/img-3.jpg" class="card-img-top" alt="Event Image 3">
+        <div class="card-body">
+          <h5 class="card-title">Event Name 3</h5>
+          <p class="card-text">Date: March 20, 2025<br>Time: 6:30 PM<br>Location: Brooklyn Museum<br>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center p-2">
+          <div class="btn-group" role="group" aria-label="Event Actions">
+            <button href="create-event.html" type="button" class="btn btn-outline-primary edit-event" data-id="3">Edit</button>
+            <button href="create-event.html" type="button" class="btn btn-outline-danger delete-event" data-id="3">Delete</button>
+          </div>
+          <a href="event-details.html" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event Card 4 -->
+    <div class="col">
+      <div class="event-card">
+        <img src="img/img-4.jpg" class="card-img-top" alt="Event Image 4">
+        <div class="card-body">
+          <h5 class="card-title">Event Name 4</h5>
+          <p class="card-text">Date: April 5, 2025<br>Time: 4:00 PM<br>Location: Times Square<br>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center p-2">
+          <div class="btn-group" role="group" aria-label="Event Actions">
+            <button href="create-event.html" type="button" class="btn btn-outline-primary edit-event" data-id="4">Edit</button>
+            <button href="create-event.html" type="button" class="btn btn-outline-danger delete-event" data-id="4">Delete</button>
+          </div>
+          <a href="event-details.html" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event Card 5 -->
+    <div class="col">
+      <div class="event-card">
+        <img src="img/img-5.jpg" class="card-img-top" alt="Event Image 5">
+        <div class="card-body">
+          <h5 class="card-title">Event Name 5</h5>
+          <p class="card-text">Date: May 10, 2025<br>Time: 3:30 PM<br>Location: Hudson Yards<br>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center p-2">
+          <div class="btn-group" role="group" aria-label="Event Actions">
+            <button href="create-event.html" type="button" class="btn btn-outline-primary edit-event" data-id="5">Edit</button>
+            <button href="create-event.html" type="button" class="btn btn-outline-danger delete-event" data-id="5">Delete</button>
+          </div>
+          <a href="event-details.html" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event Card 6 -->
+    <div class="col">
+      <div class="event-card">
+        <img src="img/img-6.jpg" class="card-img-top" alt="Event Image 6">
+        <div class="card-body">
+          <h5 class="card-title">Event Name 6</h5>
+          <p class="card-text">Date: June 25, 2025<br>Time: 7:00 PM<br>Location: Empire State Building<br>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center p-2">
+          <div class="btn-group" role="group" aria-label="Event Actions">
+            <button href="create-event.html" type="button" class="btn btn-outline-primary edit-event" data-id="6">Edit</button>
+            <button href="create-event.html" type="button" class="btn btn-outline-danger delete-event" data-id="6">Delete</button>
+          </div>
+          <a href="event-details.html" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted mb-0">Eventify &copy; 2024 | All rights reserved</p>
+    <p class="text-muted mb-0">Contact us: contact@eventify.com</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

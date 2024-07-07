@@ -1,0 +1,110 @@
+body {
+  background-image: url('img-bg.jpg'); /* Replace with your background image path */
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-attachment: fixed; /* Keep the background image fixed in place */
+  padding: 0;
+  margin: 0;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  z-index: 1000; /* Ensure navbar stays above content */
+}
+
+.card {
+  margin-top: 50px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  position: relative; /* Ensure relative positioning */
+  background-color: #133642; /* Semi-transparent white background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.content {
+    flex: 1;
+    /* Other styling for your content */
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40; /* Dark background color */
+    color: #f8f9fa; /* Light text color */
+    padding: 10px 0; /* Padding for content */
+    text-align: center; /* Center align text */
+} 
+
+
+.details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px); /* Full height minus navbar */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.event-image-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-info-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.event-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-card {
+  transition: transform 0.2s;
+  background-color: #133642; /* Semi-transparent white background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+}
+
+.form-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.form-card {
+  background-color: #133642; /* Semi-transparent white background */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+.fa-edit,
+.fa-trash-alt {
+  font-size: 1.2rem; /* Icon size */
+  margin-left: 5px; /* Spacing between icons */
+}
